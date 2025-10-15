@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Lover Survey</title>
+    <style>
+        .error-message {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pizza Lover Survey</h1>
+    <form id="pizzaForm" action="https://httpbin.org/post" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="userName">Username:</label>
+            <input type="text" id="userName" name="userName" />
+            <span id="userNameError" class="error-message" aria-live="polite"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+            <span id="emailError" class="error-message" aria-live="polite"></span>
+        </fieldset>
+
+        <fieldset>
+            <legend>Pizza Preferences</legend>
+
+            <p>Crust Type:</p>
+            <input type="radio" id="thinCrust" name="crust" value="Thin Crust" />
+            <label for="thinCrust">Thin Crust</label><br />
+            <input type="radio" id="thickCrust" name="crust" value="Thick Crust" />
+            <label for="thickCrust">Thick Crust</label><br />
+            <input type="radio" id="stuffedCrust" name="crust" value="Stuffed Crust" />
+            <label for="stuffedCrust">Stuffed Crust</label>
+            <span id="crustError" class="error-message" aria-live="polite"></span>
+
+            <fieldset>
+                <legend>Choice of Toppings</legend>
+                <input type="checkbox" id="topping1" name="topping" value="Cheese" />
+                <label for="topping1">Cheese</label><br />
+                <input type="checkbox" id="topping2" name="topping" value="Pepperoni" />
+                <label for="topping2">Pepperoni</label><br />
+                <input type="checkbox" id="topping3" name="topping" value="Mushrooms" />
+                <label for="topping3">Mushrooms</label>
+            </fieldset>
+
+            <label for="pizzaSize">Select Your Pizza Size:</label>
+            <select id="pizzaSize" name="pizzaSize">
+                <option value="">Select a Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <span id="pizzaSizeError" class="error-message" aria-live="polite"></span>
+
+            <label for="pizzaCode">Pizza Code (Format: PZZ-2005):</label>
+            <input type="text" id="pizzaCode" name="pizzaCode" placeholder="PZZ-1234" />
+            <span id="pizzaCodeError" class="error-message" aria-live="polite"></span>
+
+            <label for="orderDate">Preferred Order Date:</label>
+            <input type="date" id="orderDate" name="orderDate" />
+            <span id="orderDateError" class="error-message" aria-live="polite"></span>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Share your pizza thoughts..."></textarea>
+            <span id="commentsError" class="error-message" aria-live="polite"></span>
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+    </form>
+</body>
